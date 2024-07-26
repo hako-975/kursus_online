@@ -45,8 +45,8 @@
           $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur/' ||
           $_SERVER['REQUEST_URI'] == '/kursus_online/kursus' || 
           $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/' ||
-          $_SERVER['REQUEST_URI'] == '/kursus_online/transaksi' || 
-          $_SERVER['REQUEST_URI'] == '/kursus_online/transaksi/' 
+          $_SERVER['REQUEST_URI'] == '/kursus_online/peserta' || 
+          $_SERVER['REQUEST_URI'] == '/kursus_online/peserta/' 
         ): ?>
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
@@ -95,15 +95,15 @@
             </li>
             <li class="nav-item ml-3">
               <?php if (
-                $_SERVER['REQUEST_URI'] == '/kursus_online/transaksi' || 
-                $_SERVER['REQUEST_URI'] == '/kursus_online/transaksi/'
+                $_SERVER['REQUEST_URI'] == '/kursus_online/peserta' || 
+                $_SERVER['REQUEST_URI'] == '/kursus_online/peserta/'
               ): ?>
-                <a href="<?= base_url('transaksi'); ?>" class="nav-link active">
+                <a href="<?= base_url('peserta'); ?>" class="nav-link active">
                   <i class="fas fa-users nav-icon"></i>
                   <p>Peserta</p>
                 </a>
               <?php else: ?>
-                <a href="<?= base_url('transaksi'); ?>" class="nav-link">
+                <a href="<?= base_url('peserta'); ?>" class="nav-link">
                   <i class="fas fa-users nav-icon"></i>
                   <p>Peserta</p>
                 </a>

@@ -29,18 +29,18 @@
 							</thead>
 							<tbody>
 								<?php $i = 1; ?>
-								<?php foreach ($instruktur as $da): ?>
+								<?php foreach ($instruktur as $di): ?>
 									<tr>
 										<td class="align-middle"><?= $i++; ?></td>
-										<td class="align-middle"><?= $da['username']; ?></td>
-										<td class="align-middle"><?= $da['nama']; ?></td>
-										<td class="align-middle"><?= $da['no_telepon']; ?></td>
-										<td class="align-middle"><?= $da['email']; ?></td>
-										<td class="align-middle"><?= $da['alamat']; ?></td>
-										<td class="align-middle"><?= date('d-m-Y, H:i', strtotime($da['tanggal_gabung'])); ?></td>
+										<td class="align-middle"><?= $di['username']; ?></td>
+										<td class="align-middle"><?= $di['nama']; ?></td>
+										<td class="align-middle"><?= $di['no_telepon']; ?></td>
+										<td class="align-middle"><?= $di['email']; ?></td>
+										<td class="align-middle"><?= $di['alamat']; ?></td>
+										<td class="align-middle"><?= date('d-m-Y, H:i', strtotime($di['tanggal_gabung'])); ?></td>
 										<td class="align-middle text-center">
-											<a href="<?= base_url('instruktur/editInstruktur/' . $da['id_user']); ?>" class="btn btn-sm btn-success m-1"><i class="fas fa-fw fa-edit"></i></a>
-											<a href="<?= base_url('instruktur/removeInstruktur/' . $da['id_user']); ?>" class="btn btn-sm btn-danger m-1 btn-delete" data-nama="<?= $da['nama']; ?>"><i class="fas fa-fw fa-fw fa-trash"></i></a>
+											<a href="<?= base_url('instruktur/editInstruktur/' . $di['id_user']); ?>" class="btn btn-sm btn-success m-1"><i class="fas fa-fw fa-edit"></i></a>
+											<a href="<?= base_url('instruktur/removeInstruktur/' . $di['id_user']); ?>" class="btn btn-sm btn-danger m-1 btn-delete" data-nama="<?= $di['nama']; ?>"><i class="fas fa-fw fa-fw fa-trash"></i></a>
 										</td>
 									</tr>
 								<?php endforeach ?>

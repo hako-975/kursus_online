@@ -58,7 +58,8 @@
             </div>
             <div class="form-group mb-1 row">
               <div class="col my-auto text-right">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-fw fa-user-edit"></i> Registrasi</button>
+								<a href="javascript:history.back()" class="btn btn-danger btn-cancel" data-nama="Tambah Instruktur"><i class="fas fa-fw fa-times"></i> Batal</a>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-fw fa-save"></i> Simpan</button>
               </div>
             </div>
         	</form>

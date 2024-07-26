@@ -1,21 +1,8 @@
-/*------------ scrollbar ------------*/
-/*::-webkit-scrollbar {
-  width: 10px !important;
+/*------------ Img Kursus ------------*/
+.img-kursus {
+  width: 100px;
+  height: 100px;
 }
- 
-::-webkit-scrollbar-track {     
-  background: #F8F9FA !important;    
-}
- 
-::-webkit-scrollbar-thumb {
-  background: #DC3545 !important;
-  border-radius: 4px !important;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #c82333 !important;
-}*/
-/*------------ scrollbar ------------*/
 
 /*------------ Sticky Footer ------------*/
 main > .container {
