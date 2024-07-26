@@ -1,4 +1,4 @@
-s		</div>
+		</div>
 		<div class="text-center flashdata" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
 		<div class="text-center flashdata-success" data-flashdata="<?= $this->session->flashdata('message-success'); ?>"></div>
 		<div class="text-center flashdata-failed" data-flashdata="<?= $this->session->flashdata('message-failed'); ?>"></div>

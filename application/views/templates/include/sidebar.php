@@ -41,10 +41,10 @@
         <?php if (
           $_SERVER['REQUEST_URI'] == '/kursus_online/user' || 
           $_SERVER['REQUEST_URI'] == '/kursus_online/user/' ||
-          $_SERVER['REQUEST_URI'] == '/kursus_online/anggota' || 
-          $_SERVER['REQUEST_URI'] == '/kursus_online/anggota/' ||
-          $_SERVER['REQUEST_URI'] == '/kursus_online/buku' || 
-          $_SERVER['REQUEST_URI'] == '/kursus_online/buku/' ||
+          $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur' || 
+          $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur/' ||
+          $_SERVER['REQUEST_URI'] == '/kursus_online/kursus' || 
+          $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/' ||
           $_SERVER['REQUEST_URI'] == '/kursus_online/transaksi' || 
           $_SERVER['REQUEST_URI'] == '/kursus_online/transaksi/' 
         ): ?>
@@ -63,33 +63,33 @@
           <ul class="nav nav-treeview">
             <li class="nav-item ml-3">
               <?php if (
-                $_SERVER['REQUEST_URI'] == '/kursus_online/anggota' || 
-                $_SERVER['REQUEST_URI'] == '/kursus_online/anggota/'
+                $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur' || 
+                $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur/'
               ): ?>
-                <a href="<?= base_url('anggota'); ?>" class="nav-link active">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>Anggota</p>
+                <a href="<?= base_url('instruktur'); ?>" class="nav-link active">
+                  <i class="fas fa-user-tie nav-icon"></i>
+                  <p>Instruktur</p>
                 </a>
               <?php else: ?>
-                <a href="<?= base_url('anggota'); ?>" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>Anggota</p>
+                <a href="<?= base_url('instruktur'); ?>" class="nav-link">
+                  <i class="fas fa-user-tie nav-icon"></i>
+                  <p>Instruktur</p>
                 </a>
               <?php endif ?>
             </li>
             <li class="nav-item ml-3">
               <?php if (
-                $_SERVER['REQUEST_URI'] == '/kursus_online/buku' || 
-                $_SERVER['REQUEST_URI'] == '/kursus_online/buku/'
+                $_SERVER['REQUEST_URI'] == '/kursus_online/kursus' || 
+                $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/'
               ): ?>
-                <a href="<?= base_url('buku'); ?>" class="nav-link active">
+                <a href="<?= base_url('kursus'); ?>" class="nav-link active">
                   <i class="fas fa-book nav-icon"></i>
-                  <p>Buku</p>
+                  <p>Kursus</p>
                 </a>
               <?php else: ?>
-                <a href="<?= base_url('buku'); ?>" class="nav-link">
+                <a href="<?= base_url('kursus'); ?>" class="nav-link">
                   <i class="fas fa-book nav-icon"></i>
-                  <p>Buku</p>
+                  <p>Kursus</p>
                 </a>
               <?php endif ?>
             </li>
@@ -99,13 +99,13 @@
                 $_SERVER['REQUEST_URI'] == '/kursus_online/transaksi/'
               ): ?>
                 <a href="<?= base_url('transaksi'); ?>" class="nav-link active">
-                  <i class="fas fa-handshake nav-icon"></i>
-                  <p>Transaksi</p>
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>Peserta</p>
                 </a>
               <?php else: ?>
                 <a href="<?= base_url('transaksi'); ?>" class="nav-link">
-                  <i class="fas fa-handshake nav-icon"></i>
-                  <p>Transaksi</p>
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>Peserta</p>
                 </a>
               <?php endif ?>
             </li>

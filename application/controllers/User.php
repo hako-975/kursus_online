@@ -18,9 +18,9 @@ class User extends CI_Controller
 		$data['title']  	= 'User';
 		$data['user']	= $this->usmo->getUser();
 	
-		$this->load->view('templates/header-admin', $data);
+		$this->load->view('templates/header-dashboard', $data);
 		$this->load->view('user/index', $data);
-		$this->load->view('templates/footer-admin', $data);
+		$this->load->view('templates/footer-dashboard', $data);
 	}
 
 	public function addUser()
@@ -32,9 +32,9 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|matches[password_verify]');
 		$this->form_validation->set_rules('password_verify', 'Verifikasi Password', 'required|trim|min_length[3]|matches[password]');
 		if ($this->form_validation->run() == false) {
-		    $this->load->view('templates/header-admin', $data);
+		    $this->load->view('templates/header-dashboard', $data);
 		    $this->load->view('user/add_user', $data);
-		    $this->load->view('templates/footer-admin', $data);  
+		    $this->load->view('templates/footer-dashboard', $data);  
 		} else {
 		    $this->usmo->addUser();
 		}
@@ -57,9 +57,9 @@ class User extends CI_Controller
 		
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim');
 		if ($this->form_validation->run() == false) {
-		    $this->load->view('templates/header-admin', $data);
+		    $this->load->view('templates/header-dashboard', $data);
 		    $this->load->view('user/edit_user', $data);
-		    $this->load->view('templates/footer-admin', $data);  
+		    $this->load->view('templates/footer-dashboard', $data);  
 		} else {
 		    $this->usmo->editUser($id_user);
 		}

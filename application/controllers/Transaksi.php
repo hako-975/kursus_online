@@ -18,9 +18,9 @@ class Transaksi extends CI_Controller
 		$data['dataUser']	= $this->damo->getDataUserDashboard();
 		$data['title']  	= 'Transaksi';
 		$data['transaksi']	= $this->tramo->getTransaksi();
-		$this->load->view('templates/header-admin', $data);
+		$this->load->view('templates/header-dashboard', $data);
 		$this->load->view('transaksi/index', $data);
-		$this->load->view('templates/footer-admin', $data);
+		$this->load->view('templates/footer-dashboard', $data);
 	}
 
 	public function search()
@@ -33,9 +33,9 @@ class Transaksi extends CI_Controller
 		$data['transaksi']	= $this->tramo->getTransaksiByKeyword($search);
 		$data['title']  	= 'Transaksi - ' . $search;
 		
-		$this->load->view('templates/header-admin', $data);
+		$this->load->view('templates/header-dashboard', $data);
 		$this->load->view('transaksi/index', $data);
-		$this->load->view('templates/footer-admin', $data);
+		$this->load->view('templates/footer-dashboard', $data);
 	}
 
 	public function addTransaksi()
@@ -48,9 +48,9 @@ class Transaksi extends CI_Controller
 		$this->form_validation->set_rules('id_anggota', 'Nama Anggota', 'required|trim');
 		$this->form_validation->set_rules('id_buku', 'Judul Buku', 'required|trim');
 		if ($this->form_validation->run() == false) {
-		    $this->load->view('templates/header-admin', $data);
+		    $this->load->view('templates/header-dashboard', $data);
 		    $this->load->view('transaksi/add_transaksi', $data);
-		    $this->load->view('templates/footer-admin', $data);  
+		    $this->load->view('templates/footer-dashboard', $data);  
 		} else {
 		    $this->tramo->addTransaksi();
 		}
@@ -75,9 +75,9 @@ class Transaksi extends CI_Controller
 		
 		$this->form_validation->set_rules('denda', 'Denda', 'required|trim');
 		if ($this->form_validation->run() == false) {
-		    $this->load->view('templates/header-admin', $data);
+		    $this->load->view('templates/header-dashboard', $data);
 		    $this->load->view('transaksi/edit_transaksi', $data);
-		    $this->load->view('templates/footer-admin', $data);  
+		    $this->load->view('templates/footer-dashboard', $data);  
 		} else {
 		    $this->tramo->editTransaksi($id_transaksi);
 		}

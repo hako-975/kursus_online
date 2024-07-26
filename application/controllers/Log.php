@@ -15,8 +15,8 @@ class Log extends CI_Controller
 		$data['dataUser']	= $this->damo->getDataUserDashboard();
 		$data['title'] 		= 'Riwayat';
 		$data['log']   		= $this->lomo->getLog();
-		$this->load->view('templates/header-admin', $data);
+		$this->load->view('templates/header-dashboard', $data);
 		$this->load->view('log/index', $data);
-		$this->load->view('templates/footer-admin', $data);
+		$this->load->view('templates/footer-dashboard', $data);
 	}
 }

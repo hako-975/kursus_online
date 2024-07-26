@@ -16,9 +16,9 @@ class Buku extends CI_Controller
 		$data['dataUser']	= $this->damo->getDataUserDashboard();
 		$data['title']  	= 'Buku';
 		$data['buku']	= $this->bumo->getBuku();
-		$this->load->view('templates/header-admin', $data);
+		$this->load->view('templates/header-dashboard', $data);
 		$this->load->view('buku/index', $data);
-		$this->load->view('templates/footer-admin', $data);
+		$this->load->view('templates/footer-dashboard', $data);
 	}
 
 	public function addBuku()
@@ -32,9 +32,9 @@ class Buku extends CI_Controller
 		$this->form_validation->set_rules('penulis_buku', 'Penulis Buku', 'required|trim');
 		$this->form_validation->set_rules('stok_buku', 'Stok Buku', 'required|trim');
 		if ($this->form_validation->run() == false) {
-		    $this->load->view('templates/header-admin', $data);
+		    $this->load->view('templates/header-dashboard', $data);
 		    $this->load->view('buku/add_buku', $data);
-		    $this->load->view('templates/footer-admin', $data);  
+		    $this->load->view('templates/footer-dashboard', $data);  
 		} else {
 		    $this->bumo->addBuku();
 		}
@@ -61,9 +61,9 @@ class Buku extends CI_Controller
 		$this->form_validation->set_rules('penulis_buku', 'Penulis Buku', 'required|trim');
 		$this->form_validation->set_rules('stok_buku', 'Stok Buku', 'required|trim');
 		if ($this->form_validation->run() == false) {
-		    $this->load->view('templates/header-admin', $data);
+		    $this->load->view('templates/header-dashboard', $data);
 		    $this->load->view('buku/edit_buku', $data);
-		    $this->load->view('templates/footer-admin', $data);  
+		    $this->load->view('templates/footer-dashboard', $data);  
 		} else {
 		    $this->bumo->editBuku($id_buku);
 		}

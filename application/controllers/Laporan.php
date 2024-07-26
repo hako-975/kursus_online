@@ -20,9 +20,9 @@ class Laporan extends CI_Controller
 		$status				= $this->input->get('status');
 		$data['title']  	= 'Laporan dari ' . date('d/m/Y', strtotime($dari_tanggal)) . ' - sampai ' . date('d/m/Y', strtotime($sampai_tanggal)) . ' - status: ' . ucwords($status);
 		$data['transaksi']	= $this->lamo->getLaporanFilter($dari_tanggal, $sampai_tanggal, $status);
-		$this->load->view('templates/header-admin', $data);
+		$this->load->view('templates/header-dashboard', $data);
 		$this->load->view('laporan/index', $data);
-		$this->load->view('templates/footer-admin', $data);
+		$this->load->view('templates/footer-dashboard', $data);
 	}
 
 	public function print()
