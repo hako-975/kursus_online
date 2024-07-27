@@ -113,7 +113,7 @@
         </li>
         <!-- manajemen data -->
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <?php if (
             $_SERVER['REQUEST_URI'] == '/kursus_online/laporan' || 
             $_SERVER['REQUEST_URI'] == '/kursus_online/laporan/'
@@ -128,7 +128,7 @@
               <p>Laporan</p>
             </a>
           <?php endif ?>
-        </li>
+        </li> -->
         <div class="dropdown-divider"></div>
         <li class="nav-item">
           <?php if (

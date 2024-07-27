@@ -5,7 +5,7 @@
 				<div class="card-header">
 					<div class="row justify-content-center">
 						<div class="col-lg header-title">
-							<h3 class="m-0"><i class="fas fa-fw fa-user-tie"></i> Peserta</h3>
+							<h3 class="m-0"><i class="fas fa-fw fa-users"></i> Peserta</h3>
 						</div>
 						<div class="col-lg-4 header-button">
 							<a href="<?= base_url('peserta/addPeserta'); ?>" class="btn btn-primary"><i class="fas fa-fw fa-plus"></i> Tambah Peserta</a>

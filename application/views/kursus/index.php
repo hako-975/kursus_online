@@ -41,6 +41,7 @@
 										<td class="align-middle"><?= $dk['nama']; ?></td>
 										<td class="align-middle"><?= date('d-m-Y, H:i', strtotime($dk['tanggal_dibuat'])); ?></td>
 										<td class="align-middle text-center">
+											<a href="<?= base_url('materi/index/' . $dk['id_kursus']); ?>" class="btn btn-sm btn-info m-1"><i class="fas fa-fw fa-bars"></i></a>
 											<a href="<?= base_url('kursus/editKursus/' . $dk['id_kursus']); ?>" class="btn btn-sm btn-success m-1"><i class="fas fa-fw fa-edit"></i></a>
 											<a href="<?= base_url('kursus/removeKursus/' . $dk['id_kursus']); ?>" class="btn btn-sm btn-danger m-1 btn-delete" data-nama="<?= $dk['judul_kursus']; ?>"><i class="fas fa-fw fa-fw fa-trash"></i></a>
 										</td>

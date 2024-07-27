@@ -1,9 +1,8 @@
 <?php if ($dataUser['jabatan'] == 'Administrator'): ?>
 <?php 
 	$total_instruktur = $this->db->get_where('user', ['jabatan' => 'Instruktur'])->num_rows();
-	// $jml_buku = $this->db->get('buku')->num_rows();
-	// $jml_dipinjam = $this->db->get_where('transaksi', ['status' => 'dipinjam'])->num_rows();
-	// $jml_dikembalikan = $this->db->get_where('transaksi', ['status' => 'dikembalikan'])->num_rows();
+	$total_kursus = $this->db->get('kursus')->num_rows();
+	$total_peserta = $this->db->get_where('user', ['jabatan' => 'Peserta'])->num_rows();
 ?>
 	<div class="container p-3">
 		<div class="row mb-2">
@@ -29,8 +28,7 @@
 							<div class="col-lg-3 col-6">
 								<div class="small-box bg-info">
 									<div class="inner">
-										<!-- <?= $jml_kursus; ?> -->
-										<h3>0</h3>
+										<h3><?= $total_kursus; ?></h3>
 										<p>Total Kursus</p>
 									</div>
 									<div class="icon">
@@ -42,7 +40,7 @@
 							<div class="col-lg-3 col-6">
 								<div class="small-box bg-danger">
 									<div class="inner">
-										<h3>0</h3>
+										<h3><?= $total_peserta; ?></h3>
 										<p>Total Peserta</p>
 									</div>
 									<div class="icon">
