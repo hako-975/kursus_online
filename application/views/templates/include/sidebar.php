@@ -36,82 +36,116 @@
             </p>
           </a>
         </li>
+        <?php if ($dataUser['jabatan'] == 'Peserta'): ?>
+          <li class="nav-item">
+            <?php if (
+              $_SERVER['REQUEST_URI'] == '/kursus_online/kursusDiikuti' || 
+              $_SERVER['REQUEST_URI'] == '/kursus_online/kursusDiikuti/'
+            ): ?>
+              <a href="<?= base_url('kursusDiikuti'); ?>" class="nav-link active">
+            <?php else: ?>
+              <a href="<?= base_url('kursusDiikuti'); ?>" class="nav-link">
+            <?php endif ?>
+              <i class="nav-icon fas fa-user-graduate"></i>
+              <p>
+                Kursus Diikuti
+              </p>
+            </a>
+          </li>
+        <?php endif ?>
+        <li class="nav-item">
+          <?php if (
+            $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/jelajahiKursus' || 
+            $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/jelajahiKursus/'
+          ): ?>
+            <a href="<?= base_url('kursus/jelajahiKursus'); ?>" class="nav-link active">
+          <?php else: ?>
+            <a href="<?= base_url('kursus/jelajahiKursus'); ?>" class="nav-link">
+          <?php endif ?>
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              Jelajahi Kursus
+            </p>
+          </a>
+        </li>
         
         <!-- manajemen data -->
-        <?php if (
-          $_SERVER['REQUEST_URI'] == '/kursus_online/user' || 
-          $_SERVER['REQUEST_URI'] == '/kursus_online/user/' ||
-          $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur' || 
-          $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur/' ||
-          $_SERVER['REQUEST_URI'] == '/kursus_online/kursus' || 
-          $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/' ||
-          $_SERVER['REQUEST_URI'] == '/kursus_online/peserta' || 
-          $_SERVER['REQUEST_URI'] == '/kursus_online/peserta/' 
-        ): ?>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-align-justify nav-icon"></i>
-              <p>Manajemen Data <i class="right fas fa-angle-left"></i></p>
-            </a>
-        <?php else: ?>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-align-justify nav-icon"></i>
-              <p>Manajemen Data <i class="right fas fa-angle-left"></i></p>
-            </a>
+        <?php if ($dataUser['jabatan'] == 'Administrator'): ?>
+          <?php if (
+            $_SERVER['REQUEST_URI'] == '/kursus_online/user' || 
+            $_SERVER['REQUEST_URI'] == '/kursus_online/user/' ||
+            $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur' || 
+            $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur/' ||
+            $_SERVER['REQUEST_URI'] == '/kursus_online/kursus' || 
+            $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/' ||
+            $_SERVER['REQUEST_URI'] == '/kursus_online/peserta' || 
+            $_SERVER['REQUEST_URI'] == '/kursus_online/peserta/' 
+          ): ?>
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link active">
+                <i class="fas fa-align-justify nav-icon"></i>
+                <p>Manajemen Data <i class="right fas fa-angle-left"></i></p>
+              </a>
+          <?php else: ?>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-align-justify nav-icon"></i>
+                <p>Manajemen Data <i class="right fas fa-angle-left"></i></p>
+              </a>
+          <?php endif ?>
+            <ul class="nav nav-treeview">
+              <li class="nav-item ml-3">
+                <?php if (
+                  $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur' || 
+                  $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur/'
+                ): ?>
+                  <a href="<?= base_url('instruktur'); ?>" class="nav-link active">
+                    <i class="fas fa-user-tie nav-icon"></i>
+                    <p>Instruktur</p>
+                  </a>
+                <?php else: ?>
+                  <a href="<?= base_url('instruktur'); ?>" class="nav-link">
+                    <i class="fas fa-user-tie nav-icon"></i>
+                    <p>Instruktur</p>
+                  </a>
+                <?php endif ?>
+              </li>
+              <li class="nav-item ml-3">
+                <?php if (
+                  $_SERVER['REQUEST_URI'] == '/kursus_online/kursus' || 
+                  $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/'
+                ): ?>
+                  <a href="<?= base_url('kursus'); ?>" class="nav-link active">
+                    <i class="fas fa-book nav-icon"></i>
+                    <p>Kursus</p>
+                  </a>
+                <?php else: ?>
+                  <a href="<?= base_url('kursus'); ?>" class="nav-link">
+                    <i class="fas fa-book nav-icon"></i>
+                    <p>Kursus</p>
+                  </a>
+                <?php endif ?>
+              </li>
+              <li class="nav-item ml-3">
+                <?php if (
+                  $_SERVER['REQUEST_URI'] == '/kursus_online/peserta' || 
+                  $_SERVER['REQUEST_URI'] == '/kursus_online/peserta/'
+                ): ?>
+                  <a href="<?= base_url('peserta'); ?>" class="nav-link active">
+                    <i class="fas fa-users nav-icon"></i>
+                    <p>Peserta</p>
+                  </a>
+                <?php else: ?>
+                  <a href="<?= base_url('peserta'); ?>" class="nav-link">
+                    <i class="fas fa-users nav-icon"></i>
+                    <p>Peserta</p>
+                  </a>
+                <?php endif ?>
+              </li>
+            </ul>
+          </li>
+          <!-- manajemen data -->
         <?php endif ?>
-          <ul class="nav nav-treeview">
-            <li class="nav-item ml-3">
-              <?php if (
-                $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur' || 
-                $_SERVER['REQUEST_URI'] == '/kursus_online/instruktur/'
-              ): ?>
-                <a href="<?= base_url('instruktur'); ?>" class="nav-link active">
-                  <i class="fas fa-user-tie nav-icon"></i>
-                  <p>Instruktur</p>
-                </a>
-              <?php else: ?>
-                <a href="<?= base_url('instruktur'); ?>" class="nav-link">
-                  <i class="fas fa-user-tie nav-icon"></i>
-                  <p>Instruktur</p>
-                </a>
-              <?php endif ?>
-            </li>
-            <li class="nav-item ml-3">
-              <?php if (
-                $_SERVER['REQUEST_URI'] == '/kursus_online/kursus' || 
-                $_SERVER['REQUEST_URI'] == '/kursus_online/kursus/'
-              ): ?>
-                <a href="<?= base_url('kursus'); ?>" class="nav-link active">
-                  <i class="fas fa-book nav-icon"></i>
-                  <p>Kursus</p>
-                </a>
-              <?php else: ?>
-                <a href="<?= base_url('kursus'); ?>" class="nav-link">
-                  <i class="fas fa-book nav-icon"></i>
-                  <p>Kursus</p>
-                </a>
-              <?php endif ?>
-            </li>
-            <li class="nav-item ml-3">
-              <?php if (
-                $_SERVER['REQUEST_URI'] == '/kursus_online/peserta' || 
-                $_SERVER['REQUEST_URI'] == '/kursus_online/peserta/'
-              ): ?>
-                <a href="<?= base_url('peserta'); ?>" class="nav-link active">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>Peserta</p>
-                </a>
-              <?php else: ?>
-                <a href="<?= base_url('peserta'); ?>" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>Peserta</p>
-                </a>
-              <?php endif ?>
-            </li>
-          </ul>
-        </li>
-        <!-- manajemen data -->
 
         <!-- <li class="nav-item">
           <?php if (

@@ -14,16 +14,36 @@ class Kursus extends CI_Controller
 	public function index()
 	{
 		$data['dataUser']	= $this->damo->getDataUserDashboard();
+		if ($data['dataUser']['jabatan'] == 'Peserta') {
+			redirect('kursus/jelajahiKursus');
+			exit;
+		}
+
 		$data['title']  	= 'Kursus';
 		$data['kursus']	= $this->kumo->getKursus();
 		$this->load->view('templates/header-dashboard', $data);
 		$this->load->view('kursus/index', $data);
 		$this->load->view('templates/footer-dashboard', $data);
 	}
+	
+	public function jelajahiKursus()
+	{
+		$data['dataUser']	= $this->damo->getDataUserDashboard();
+		$data['title']  	= 'Kursus';
+		$data['kursus']	= $this->kumo->getKursus();
+		$this->load->view('templates/header-dashboard', $data);
+		$this->load->view('kursus/jelajahi_kursus', $data);
+		$this->load->view('templates/footer-dashboard', $data);
+	}
 
 	public function addKursus()
 	{
 		$data['dataUser']	= $this->damo->getDataUserDashboard();
+		if ($data['dataUser']['jabatan'] == 'Peserta') {
+			redirect('kursus/jelajahiKursus');
+			exit;
+		}
+
 		$data['title'] 		= 'Tambah Kursus';
 
 		$this->form_validation->set_rules('judul_kursus', 'Judul Kursus', 'required|trim');
@@ -49,6 +69,11 @@ class Kursus extends CI_Controller
 		}
 
 		$data['dataUser']	= $this->damo->getDataUserDashboard();
+		if ($data['dataUser']['jabatan'] == 'Peserta') {
+			redirect('kursus/jelajahiKursus');
+			exit;
+		}
+
 		$data['kursus']	= $this->kumo->getKursusById($id_kursus);
 		$data['title'] 		= 'Ubah Kursus - ' . $data['kursus']['judul_kursus'];
 		

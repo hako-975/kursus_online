@@ -41,8 +41,8 @@ class Dashboard_model extends CI_Model
 	public function userPrivilege($redirect = 'dashboard', $isi2 = '')
 	{
 		$dataUser = $this->getDataUserDashboard();
-		/*if ($dataUser['jabatan'] != 'Dashboardistrator') {
-			$isi = 'Akses ditolak! Karena jabatan anda sebagai ' . $dataUser['jabatan'] . '! Hubungi Dashboardistrator untuk melakukan perubahan ';
+		if ($dataUser['jabatan'] != 'Administrator') {
+			$isi = 'Akses ditolak! Karena jabatan anda sebagai ' . $dataUser['jabatan'] . '! Hubungi Administrator untuk melakukan perubahan ';
 			$isi .= ucfirst($isi2);
 
 			$this->session->set_flashdata('message-failed', $isi);
@@ -51,7 +51,7 @@ class Dashboard_model extends CI_Model
 			$this->lomo->addLog($isi, $id_user);
 			redirect($redirect);
 			exit();
-		}*/
+		}
 	}
 
 	public function changePassword()
